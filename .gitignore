@@ -1,0 +1,25 @@
+# Archivos basura de Mac
+.DS_Store
+
+# Archivos compilados de Python (no sirven en otras PC)
+__pycache__/
+*.pyc
+
+# Entornos virtuales (pesan mucho y se recrean, no se suben)
+venv/
+env/
+.venv/
+
+# Variables de entorno (CLAVES SECRETAS - ¡Muy importante!)
+*.env
+
+# Folders de entorno y pruebas
+envoils
+supports
+
+# Tests de notebooks
+*.ipynb
+
+# Archivos especificos de pruebas o anteriores
+oils_submissions.py
+
