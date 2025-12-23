@@ -12,6 +12,7 @@ def oil_submission(le_type):
     prepare it to work in the Summaries (next functions from the query). '''
 
     oil_type = {
+         'soybean_2025' : {'NA SBO 2025': {'cols': 'c:d', 'skiprows': 24, 'col_num':[2,3]}},
         'soybean_2026': {'NA SBO 2026': {'cols': "c:d", 'skiprows': 24,'col_num':[2,3]}},
         'soybean_2027':{'NA SBO 2027': {'cols': "c:d", 'skiprows': 24,'col_num':[2,3]}},
         'palm_2026': {'NA Palm 2026': {'cols': "d:e", 'skiprows': 50,'col_num':[3,4]}},
@@ -155,7 +156,7 @@ palm_26 = palm_scenario('palm_2026')
 palm_25 = palm_scenario('palm_2025')
 soybean_27 = soybean_scenario('soybean_2027')
 soybean_26 = soybean_scenario('soybean_2026')
-
+soybean_25 = soybean_scenario('soybean_2025')
 # Creation of Excel File by Scenario.
 
 path = input('Where to save the Final File? Paste the path: ')
@@ -164,6 +165,7 @@ final_name =f'{path}/Oils Summary {date.today()}.xlsx'.strip('"')
 with pd.ExcelWriter(final_name) as writer:
     palm_25.to_excel(writer,sheet_name='Palm 2025')
     palm_26.to_excel(writer,sheet_name='Palm 2026')
+    soybean_25.to_excel(writer,sheet_name='Soybean 2025')
     soybean_26.to_excel(writer,sheet_name='Soybean 2026')
     soybean_27.to_excel(writer,sheet_name='Soybean 2027')
 
